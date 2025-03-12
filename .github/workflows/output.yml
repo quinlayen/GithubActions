@@ -7,4 +7,5 @@ jobs:
       - name: Output GitHub context
         run: |
           echo "${{ toJSON(github) }}"
-          echo "This is a second line"
+          echo "${{github.event_name}}"
+      
