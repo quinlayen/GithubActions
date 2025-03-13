@@ -1,5 +1,5 @@
 name: Contexts (Part 2)
-run-name: My custom workflow run name - ${{ runner.os }}
+# run-name: My custom workflow run name - ${{ runner.os }}
 
 on:
   push:
@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Display Information
         run: |
+          echo "Running on ${{ runner.os }}"
           echo "Event name: ${{ github.event_name }}"
           echo "Ref: ${{ github.ref }}"
           echo "SHA: ${{ github.sha }}"
