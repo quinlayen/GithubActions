@@ -6,4 +6,4 @@ jobs:
     steps:
       - name: Output GitHub context
         run: |
-          echo "${{ toJSON(github) }}"      
+          echo "${{ github.event.repository.branches_url }}"      
