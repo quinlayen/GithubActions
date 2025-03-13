@@ -9,8 +9,6 @@ on:
         required: false
         default: "false"
   push:
-    paths-ignore:
-        - '.github/workflows/*'
 
 jobs:
   echo-data:
