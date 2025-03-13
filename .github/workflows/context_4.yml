@@ -9,8 +9,8 @@ on:
         required: false
         default: "false"
   push:
-    paths-ignore:
-        - '.github/workflows/*'
+    # paths-ignore:
+    #     - '.github/workflows/*'
 
 env:
   MY_WORKFLOW_VAR: "workflow"
