@@ -3,8 +3,8 @@ run-name: My custom workflow run name - ${{ runner.os }}
 
 on:
   push:
-    paths-ignore:
-        - '.github/workflows/*'
+    # paths-ignore:
+    #     - '.github/workflows/*'
   workflow_dispatch:
 
 jobs:
