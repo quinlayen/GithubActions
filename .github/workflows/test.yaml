@@ -1,0 +1,40 @@
+name: Test
+
+on: workflow_dispatch
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+
+            - name: Install NodeJS
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+
+            - name: Install depencencies
+              run: npm ci
+
+            - name: Test
+              run: npm test
+
+    lint:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: install lint
+              run: npm install eslint
+            
+            - name: Lint
+              run: npm run lint
+              
+    deploy:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy
+              run: |
+                echo "Deploying..."
